@@ -17,26 +17,25 @@
         android:layout_height="150dp">
 
         <TextView
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:id="@+id/textView"
             android:text="0"
             android:textSize="120sp"
             android:textColor="@android:color/darker_gray"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
+            android:scrollbars="vertical"
             android:textAlignment="textEnd"
-            android:paddingRight="30dp"
-            >
-
-        </TextView>
+            android:paddingHorizontal="10dp"
+            />
 
     </RelativeLayout>
     <GridLayout
         android:layout_weight="8"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:rowCount="5"
+        android:rowCount="4"
         android:columnCount="4"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"

@@ -3,6 +3,7 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button[] numbers;
     private TextView textView;
     private String currText = "";
+    private Button clear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +21,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         textView = findViewById(R.id.textView);
+        textView.setMovementMethod(new ScrollingMovementMethod());
 
-        numbers = new Button[10];
+        clear = findViewById(R.id.clear);
+        clear.setOnClickListener(this);
+
+        numbers = new Button[11];
         numbers[0] = findViewById(R.id.btn0);
         numbers[1] = findViewById(R.id.btn1);
         numbers[2] = findViewById(R.id.btn2);
@@ -42,9 +48,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         for (int i = 0; i < 10; i++) {
             if (v.getId() == numbers[i].getId()) {
-                currText += String.valueOf(i);
-                textView.setText(currText);
+                if (i == 0) {
+                    if (!currText.equals("0")) {
+                        currText += String.valueOf(i);
+                        textView.setText(currText);
+                    }
+                } else {
+                    currText += String.valueOf(i);
+                    textView.setText(currText);
+                }
             }
+        }
+
+        if(v.getId() == clear.getId()){
+            currText = "";
+            textView.setText("0");
         }
     }
 }
