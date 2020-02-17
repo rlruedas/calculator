@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:background="@drawable/bg"
     android:weightSum="10"
+    android:paddingBottom="20dp"
     android:layout_gravity="center_horizontal"
     tools:context=".MainActivity">
 
@@ -24,7 +25,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
-            android:paddingLeft="314dp">
+            android:textAlignment="textEnd"
+            android:paddingRight="30dp"
+            >
 
         </TextView>
 
@@ -43,6 +46,7 @@
 
         <!--        1st row-->
         <Button
+            android:foreground="?android:selectableItemBackground"
             android:id="@+id/clear"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -58,6 +62,7 @@
 
         </Button>
         <Button
+            android:foreground="?android:selectableItemBackground"
             android:id ="@+id/minpos"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -73,6 +78,7 @@
             android:padding="15dp">
         </Button>
         <Button
+            android:foreground="?android:selectableItemBackground"
             android:id ="@+id/percentage"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -88,6 +94,7 @@
             android:padding="15dp">
         </Button>
         <Button
+            android:foreground="?android:selectableItemBackground"
             android:id ="@+id/divide"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -106,7 +113,8 @@
 
 <!--        2nd row-->
         <Button
-            android:id="@+id/seven"
+            android:foreground="?android:selectableItemBackground"
+            android:id="@+id/btn7"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_rowWeight="1"
@@ -121,7 +129,8 @@
 
         </Button>
         <Button
-            android:id ="@+id/eight"
+            android:foreground="?android:selectableItemBackground"
+            android:id ="@+id/btn8"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
@@ -136,7 +145,8 @@
             android:padding="15dp">
         </Button>
         <Button
-            android:id ="@+id/nine"
+            android:foreground="?android:selectableItemBackground"
+            android:id ="@+id/btn9"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
@@ -151,6 +161,7 @@
             android:padding="15dp">
         </Button>
         <Button
+            android:foreground="?android:selectableItemBackground"
             android:id ="@+id/multi"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -168,7 +179,8 @@
 
 <!--        3rd Row-->
         <Button
-            android:id ="@+id/four"
+            android:foreground="?android:selectableItemBackground"
+            android:id ="@+id/btn4"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
@@ -183,7 +195,8 @@
             android:padding="15dp">
         </Button>
         <Button
-            android:id ="@+id/five"
+            android:foreground="?android:selectableItemBackground"
+            android:id ="@+id/btn5"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
@@ -198,7 +211,8 @@
             android:padding="15dp">
         </Button>
         <Button
-            android:id ="@+id/six"
+            android:foreground="?android:selectableItemBackground"
+            android:id ="@+id/btn6"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
@@ -213,6 +227,7 @@
             android:padding="15dp">
         </Button>
         <Button
+            android:foreground="?android:selectableItemBackground"
             android:id ="@+id/subtract"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -229,7 +244,8 @@
         </Button>
 <!--        4th Row-->
         <Button
-            android:id ="@+id/one"
+            android:foreground="?android:selectableItemBackground"
+            android:id ="@+id/btn1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
@@ -244,7 +260,8 @@
             android:padding="15dp">
         </Button>
         <Button
-            android:id ="@+id/two"
+            android:foreground="?android:selectableItemBackground"
+            android:id ="@+id/btn2"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
@@ -258,7 +275,8 @@
             android:background="@drawable/button_bg_round">
         </Button>
         <Button
-            android:id ="@+id/three"
+            android:foreground="?android:selectableItemBackground"
+            android:id ="@+id/btn3"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
@@ -272,6 +290,7 @@
             android:background="@drawable/button_bg_round">
         </Button>
         <Button
+            android:foreground="?android:selectableItemBackground"
             android:id ="@+id/add"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -294,13 +313,15 @@
         android:layout_height="80dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
+
         android:alignmentMode="alignMargins"
         android:layout_gravity="center"
         android:columnOrderPreserved="false">
 
 
         <Button
-            android:id="@+id/zero"
+            android:foreground="?android:selectableItemBackground"
+            android:id="@+id/btn0"
             android:layout_width="175dp"
             android:layout_height="80dp"
             android:layout_rowWeight="1"
@@ -317,6 +338,7 @@
 
         </Button>
         <Button
+            android:foreground="?android:selectableItemBackground"
             android:id ="@+id/decimal"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -332,6 +354,7 @@
             android:padding="15dp">
         </Button>
         <Button
+            android:foreground="?android:selectableItemBackground"
             android:id ="@+id/equals"
             android:layout_width="80dp"
             android:layout_height="80dp"
