@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    android:weightSum="10"
+    android:layout_gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:text="0"
+            android:textSize="120sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:paddingLeft="314dp">
+
+        </TextView>
+
+    </RelativeLayout>
+    <GridLayout
+        android:layout_weight="8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:rowCount="5"
+        android:columnCount="4"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:alignmentMode="alignMargins"
+        android:layout_gravity="center"
+        android:columnOrderPreserved="false">
+
+        <!--        1st row-->
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:background="@drawable/grey_bg_round"
+            android:fontFamily="@font/roboto"
+            android:text="C"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold">
+
+        </Button>
+        <Button
+            android:id ="@+id/minpos"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="±"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/grey_bg_round"
+            android:padding="15dp">
+        </Button>
+        <Button
+            android:id ="@+id/percentage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="%"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/grey_bg_round"
+            android:padding="15dp">
+        </Button>
+        <Button
+            android:id ="@+id/divide"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="÷"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/orange_bg_round"
+            android:padding="15dp">
+        </Button>
+
+
+<!--        2nd row-->
+        <Button
+            android:id="@+id/seven"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:background="@drawable/button_bg_round"
+            android:fontFamily="@font/roboto"
+            android:text="7"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold">
+
+        </Button>
+        <Button
+            android:id ="@+id/eight"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="8"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/button_bg_round"
+            android:padding="15dp">
+        </Button>
+        <Button
+            android:id ="@+id/nine"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="9"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/button_bg_round"
+            android:padding="15dp">
+        </Button>
+        <Button
+            android:id ="@+id/multi"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="×"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/orange_bg_round"
+            android:padding="15dp">
+        </Button>
+
+<!--        3rd Row-->
+        <Button
+            android:id ="@+id/four"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="4"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/button_bg_round"
+            android:padding="15dp">
+        </Button>
+        <Button
+            android:id ="@+id/five"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="5"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/button_bg_round"
+            android:padding="15dp">
+        </Button>
+        <Button
+            android:id ="@+id/six"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="6"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/button_bg_round"
+            android:padding="15dp">
+        </Button>
+        <Button
+            android:id ="@+id/subtract"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="-"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/orange_bg_round"
+            android:padding="15dp">
+        </Button>
+<!--        4th Row-->
+        <Button
+            android:id ="@+id/one"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="1"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/button_bg_round"
+            android:padding="15dp">
+        </Button>
+        <Button
+            android:id ="@+id/two"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="2"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/button_bg_round">
+        </Button>
+        <Button
+            android:id ="@+id/three"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="3"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_bg_round">
+        </Button>
+        <Button
+            android:id ="@+id/add"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="+"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/orange_bg_round"
+            android:padding="15dp">
+        </Button>
+
+    </GridLayout>
+    <GridLayout
+        android:layout_weight="8"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:alignmentMode="alignMargins"
+        android:layout_gravity="center"
+        android:columnOrderPreserved="false">
+
+
+        <Button
+            android:id="@+id/zero"
+            android:layout_width="175dp"
+            android:layout_height="80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="0"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:background="@drawable/button_bg_round"
+            android:fontFamily="@font/roboto"
+            android:paddingRight="98dp">
+
+        </Button>
+        <Button
+            android:id ="@+id/decimal"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="."
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/button_bg_round"
+            android:padding="15dp">
+        </Button>
+        <Button
+            android:id ="@+id/equals"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:fontFamily="@font/roboto"
+            android:text="="
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/orange_bg_round"
+            android:padding="15dp">
+        </Button>
+
+
+
+    </GridLayout>
+
+</LinearLayout>
