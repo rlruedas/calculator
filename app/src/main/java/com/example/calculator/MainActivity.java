@@ -10,10 +10,13 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button[] numbers;
-    private TextView textView;
-    private String currText = "";
-    private Button clear;
+    private Button[] numbers, operators;
+    private TextView firstNo, secondNo, textView;
+    private String firstText = "", secondText = "", oper = "";
+    private Button clear, add, multiply, subtract, divide, equals, decimal;
+    private Double first, second, total;
+    private int k = 0, c = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +26,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView = findViewById(R.id.textView);
         textView.setMovementMethod(new ScrollingMovementMethod());
 
+        firstNo = findViewById(R.id.firstNo);
+        secondNo = findViewById(R.id.secondNo);
         clear = findViewById(R.id.clear);
-        clear.setOnClickListener(this);
+        add = findViewById(R.id.add);
+        subtract = findViewById(R.id.subtract);
+        multiply = findViewById(R.id.multiply);
+        divide = findViewById(R.id.divide);
+        equals = findViewById(R.id.equals);
+        decimal = findViewById(R.id.decimal);
 
-        numbers = new Button[11];
+        clear.setOnClickListener(this);
+        firstNo.setOnClickListener(this);
+        secondNo.setOnClickListener(this);
+        add.setOnClickListener(this);
+        subtract.setOnClickListener(this);
+        multiply.setOnClickListener(this);
+        divide.setOnClickListener(this);
+        equals.setOnClickListener(this);
+        decimal.setOnClickListener(this);
+
+        numbers = new Button[10];
         numbers[0] = findViewById(R.id.btn0);
         numbers[1] = findViewById(R.id.btn1);
         numbers[2] = findViewById(R.id.btn2);
@@ -42,27 +62,104 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             numbers[i].setOnClickListener(this);
         }
 
+        operators = new Button[4];
+        operators[0] = findViewById(R.id.add);
+        operators[1] = findViewById(R.id.subtract);
+        operators[2] = findViewById(R.id.multiply);
+        operators[3] = findViewById(R.id.divide);
+
+        for (int i = 0; i < 4; i++){
+            operators[i].setOnClickListener(this);
+        }
+
     }
+
 
     @Override
     public void onClick(View v) {
-        for (int i = 0; i < 10; i++) {
-            if (v.getId() == numbers[i].getId()) {
-                if (i == 0) {
-                    if (!currText.equals("0")) {
-                        currText += String.valueOf(i);
-                        textView.setText(currText);
+
+        for (int i = 0; i < 4; i++){
+            if(v.getId() == operators[i].getId()){
+                if(!firstNo.getText().equals("Enter First Number")){
+                    c = 1;
+                    oper = String.valueOf(i);
+                    k = Integer.parseInt(oper);
+                }
+            }
+        }
+
+            if(c == 0){
+                for (int i = 0; i < 10; i++) {
+                    if (v.getId() == numbers[i].getId()) {
+                        if (i == 0) {
+                            if (!firstText.equals("0")) {
+                                firstText += String.valueOf(i);
+                                firstNo.setText(firstText);
+                            }
+                        } else {
+                            firstText += String.valueOf(i);
+                            firstNo.setText(firstText);
+                        }
                     }
-                } else {
-                    currText += String.valueOf(i);
-                    textView.setText(currText);
+                }
+                if(v.getId() == decimal.getId()){
+                    firstText += ".";
+                    firstNo.setText(firstText);
+                }
+            }else if (c == 1){
+
+                for (int i = 0; i < 10; i++) {
+                    if (v.getId() == numbers[i].getId()) {
+                        if (i == 0) {
+                            if (!secondText.equals("0")) {
+                                secondText += String.valueOf(i);
+                                secondNo.setText(secondText);
+                            }
+                        } else {
+                            secondText += String.valueOf(i);
+                            secondNo.setText(secondText);
+                        }
+                    }
+                }
+                if(v.getId() == decimal.getId()){
+                    secondText += ".";
+                    secondNo.setText(secondText);
+                }
+            }
+
+        if(v.getId() == equals.getId()){
+            if(!secondNo.getText().equals("Enter Second Number")){
+                if(k == 0){
+                    first = Double.parseDouble(firstText);
+                    second = Double.parseDouble(secondText);
+                    total = first + second;
+                    textView.setText(Double.toString(Math.floor(total)));
+                } else if(k == 1) {
+                    first = Double.parseDouble(firstText);
+                    second = Double.parseDouble(secondText);
+                    total = first - second;
+                    textView.setText(Double.toString(Math.floor(total)));
+                }else if(k == 2) {
+                    first = Double.parseDouble(firstText);
+                    second = Double.parseDouble(secondText);
+                    total = first * second;
+                    textView.setText(Double.toString(Math.floor(total)));
+                }else if(k == 3) {
+                    first = Double.parseDouble(firstText);
+                    second = Double.parseDouble(secondText);
+                    total = first / second;
+                    textView.setText(Double.toString(Math.floor(total)));
                 }
             }
         }
 
         if(v.getId() == clear.getId()){
-            currText = "";
-            textView.setText("0");
+            firstText = "";
+            secondText = "";
+            textView.setText("");
+            firstNo.setText("Enter First Number");
+            secondNo.setText("Enter Second Number");
+            c = 0;
         }
     }
 }

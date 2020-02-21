@@ -14,21 +14,47 @@
     <RelativeLayout
         android:layout_weight="2"
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="150dp"
+        android:padding="15dp">
 
         <TextView
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:id="@+id/textView"
-            android:text="0"
-            android:textSize="120sp"
-            android:textColor="@android:color/darker_gray"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            android:textAlignment="textEnd"
+            android:id="@+id/firstNo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/holo_orange_dark"
             android:paddingHorizontal="10dp"
-            />
+            android:text="Enter First Number"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:onClick="onClick"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/secondNo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@id/firstNo"
+            android:layout_marginBottom="-58dp"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="10dp"
+            android:text="Enter Second Number"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:onClick="onClick"
+            android:focusable="true"/>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/black"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="70sp"/>
 
     </RelativeLayout>
     <GridLayout
@@ -39,6 +65,7 @@
         android:columnCount="4"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
+        android:paddingTop="50dp"
         android:alignmentMode="alignMargins"
         android:layout_gravity="center"
         android:columnOrderPreserved="false">
@@ -161,7 +188,7 @@
         </Button>
         <Button
             android:foreground="?android:selectableItemBackground"
-            android:id ="@+id/multi"
+            android:id ="@+id/multiply"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
